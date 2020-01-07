@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <el-button>默认按钮</el-button>
+    <el-button type="primary">主要按钮</el-button>
+    <el-button type="text">文字按钮</el-button>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -72,7 +75,8 @@
         </a>
       </li>
       <li>
-        <a href="https://github.com/vuejs/awesome-vue"
+        <a
+          href="https://github.com/vuejs/awesome-vue"
           target="_blank"
         >
           awesome-vue
@@ -92,6 +96,7 @@ export default {
   }
 }
 </script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-<!--    <img src="./assets/logo.png">-->
-<!--    这个路由标签必须要-->
+    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
