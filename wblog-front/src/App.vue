@@ -1,42 +1,39 @@
 <template>
-  <div id="app">
-    <div id="menu">
-      <el-col :span="12">
-        <h2>个人菜单</h2>
+<div id="app">
+  <el-container>
+<!--    导航菜单-->
+    <el-aside>
+      <h3>菜单</h3>
+      <el-menu default-active="1"  router>
 
-        <el-menu default-active="2"   router="true">
-          <el-menu-item index="1" route="/article">
-              <i class="el-icon-document"></i>
-              <span>文章管理</span>
-          </el-menu-item>
+        <el-menu-item index="1" route="/article">
+            <i class="el-icon-document"></i>
+            <span>文章管理</span>
+        </el-menu-item>
 
-          <el-menu-item index="2" route="/personal">
-            <i class="el-icon-menu"></i>
-            <span slot="title">个人中心</span>
-          </el-menu-item>
+        <el-menu-item index="2" route="/personal">
+          <i class="el-icon-menu"></i>
+          <span slot="title">个人中心</span>
+        </el-menu-item>
 
-          <el-menu-item index="3" route="/setting">
-            <i class="el-icon-setting"></i>
-            <span slot="title">设置</span>
-          </el-menu-item>
-        </el-menu>
-      </el-col>
-    </div>
-    <div id="page">
+        <el-menu-item index="3" route="/setting">
+          <i class="el-icon-setting"></i>
+          <span slot="title">设置</span>
+        </el-menu-item>
+      </el-menu>
+    </el-aside>
+    <!--主要内容-->
+    <el-main>
       <router-view/>
-    </div>
-  </div>
+    </el-main>
+
+  </el-container>
+</div>
 </template>
 
 <script>
 export default {
   name: 'App',
-    methods:{
-
-        handleOpen(){
-          // alert("open!");
-        }
-    }
 }
 </script>
 

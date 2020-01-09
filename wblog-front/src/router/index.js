@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
-import personal from "@/views/personal";
-import article from "@/views/article";
-import setting from "@/views/setting";
+
+import article from "../views/article";
+import articleRouters from "./inclue/article";
+
+import personal from "../views/personal";
+
+import setting from "../views/setting";
 
 Vue.use(Router)
 
@@ -12,18 +15,19 @@ export default new Router({
     {
       path:'/personal',
       name:'personal',
-      component: personal
+      component:personal
     },
     {
       path:'/setting',
       name:'setting',
-      component: setting
+      component:setting
     },
     {
       path:'/article',
       name:'article',
-      component: article
-    }
+      component:article,
+      children:articleRouters
+    },
 
   ]
 })
