@@ -1,6 +1,7 @@
 package com.elead.common.exception;
 
 import com.elead.model.web.ResultCode;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import lombok.ToString;
 @Data
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class BaseException extends RuntimeException{
     private ResultCode resultCode;
 }

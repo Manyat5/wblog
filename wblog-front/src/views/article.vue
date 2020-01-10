@@ -12,9 +12,8 @@
           显示文章
         </el-button>
       </router-link>
-      <router-view>
 
-      </router-view>
+      <router-view></router-view>
     </div>
 </template>
 

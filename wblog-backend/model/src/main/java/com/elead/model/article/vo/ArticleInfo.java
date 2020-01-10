@@ -1,8 +1,8 @@
-package com.elead.model.vo;
+package com.elead.model.article.vo;
 
-import com.elead.model.po.Article;
-import com.elead.model.po.Tag;
-import com.elead.model.po.User;
+import com.elead.model.article.po.Article;
+import com.elead.model.article.po.Tag;
+import com.elead.model.article.po.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;

@@ -40,13 +40,13 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("xxx 接口文档")
+                .title("博客接口文档")
                 //创建人
                 .contact("wwy")
                 //版本号
                 .version("1.0")
                 //描述
-                .description("xxx后台接口文档")
+                .description("博客后台接口文档")
                 .build();
     }
 }

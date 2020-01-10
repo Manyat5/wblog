@@ -1,7 +1,7 @@
 package com.elead.article.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.elead.model.po.Article;
+import com.elead.model.article.po.Article;
 
 
 /**

@@ -1,5 +1,6 @@
-package com.elead.model.po;
+package com.elead.model.article.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -9,17 +10,17 @@ import lombok.ToString;
 /**
  * @author wwy
  * @date 2020/1/6
- * 文章标签
+ * 分类目录
  */
 @Data
-@ToString
 @NoArgsConstructor
-@TableName(value = "wb_tag")
-public class Tag {
-    @TableId
+@ToString
+@TableName("wb_category")
+public class Category {
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
-     * 标签名
+     * 分类名
      */
-    private String tagName;
+    private String cateName;
 }

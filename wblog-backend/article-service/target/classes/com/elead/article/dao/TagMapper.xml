@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.elead.article.dao.TagMapper">
-    <select id="selByAId" resultType="com.elead.model.po.Tag" >
+    <select id="selByAId" resultType="com.elead.model.article.po.Tag" >
           select t.id,t.tag_name from wb_tag t left join wb_article_tag wat on
           t.id=wat.tid  where wat.aid=#{aid};
     </select>

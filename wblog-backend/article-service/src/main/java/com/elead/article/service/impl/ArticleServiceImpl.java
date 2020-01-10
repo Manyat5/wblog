@@ -4,8 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.elead.article.dao.ArticleMapper;
 import com.elead.article.dao.TagMapper;
 import com.elead.article.dao.UserMapper;
-import com.elead.model.po.Article;
-import com.elead.model.vo.ArticleInfo;
+import com.elead.model.article.po.Article;
+import com.elead.model.article.po.User;
+import com.elead.model.article.vo.ArticleInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import com.elead.article.service.ArticleService;
@@ -35,17 +36,30 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<ArticleInfo> listByUid(Long uid) {
+    public List<Article> listByUid(Long uid) {
         Article article = new Article();
         article.setUid(uid);
-        List<Article> articles = articleMapper.selectList(new QueryWrapper<>(article));
-        return xfer(articles);
+        return articleMapper.selectList(new QueryWrapper<>(article));
     }
 
     @Override
     @Transactional
     public Boolean delByAid(Long aid) {
         int result = articleMapper.deleteById(aid);
+        return result==1;
+    }
+
+    @Override
+    @Transactional
+    public Boolean edit(Article article) {
+        int result = articleMapper.updateById(article);
+        return result==1;
+    }
+
+    @Override
+    @Transactional
+    public Boolean add(Article article) {
+        int result=articleMapper.insert(article);
         return result==1;
     }
 
@@ -59,7 +73,10 @@ public class ArticleServiceImpl implements ArticleService {
                     ArticleInfo articleInfo = new ArticleInfo();
                     BeanUtils.copyProperties(article,articleInfo);
                     //设置作者
-                    articleInfo.setUser(userMapper.selectById(articleInfo.getUid()));
+                    User user = userMapper.selectById(articleInfo.getUid());
+                    //去除密码
+                    user.setPassword(null);
+                    articleInfo.setUser(user);
                     //设置标签
                     articleInfo.setTags(tagMapper.selByAId(articleInfo.getId()));
                     return articleInfo;

@@ -1,7 +1,8 @@
 package com.elead.article.service;
 
 
-import com.elead.model.vo.ArticleInfo;
+import com.elead.model.article.po.Article;
+import com.elead.model.article.vo.ArticleInfo;
 
 import java.util.List;
 
@@ -19,10 +20,19 @@ public interface ArticleService {
     /**
      * 返回特定用户的所有文章
      */
-    List<ArticleInfo> listByUid(Long uid);
+    List<Article> listByUid(Long uid);
 
     /**
      * 删除文章
      */
     Boolean delByAid(Long aid);
+
+    /**
+     * 编辑修改文章
+     */
+    Boolean edit(Article article);
+    /**
+     * 添加新文章
+     */
+    Boolean add(Article article);
 }

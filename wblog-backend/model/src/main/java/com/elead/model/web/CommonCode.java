@@ -7,7 +7,8 @@ package com.elead.model.web;
  */
 public enum CommonCode implements ResultCode{
     SUCCESS(200,"操作成功"),
-    DEFAULT(499,"未知异常");
+    DEFAULT(499,"未知异常"),
+    NULLEXCEPTION(498,"参数不能为空");
     private int code;
     private String mesg;
 

@@ -1,5 +1,6 @@
 package com.elead.api.article;
 
+import com.elead.model.article.po.Article;
 import com.elead.model.web.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,5 +21,11 @@ public interface ArticleControllerApi {
 
     @ApiOperation("删除特定文章")
     BaseResponse remove(Long uid);
+
+    @ApiOperation("编辑文章内容")
+    BaseResponse edit(Article article);
+
+    @ApiOperation("创建新文章")
+    BaseResponse add(Article article);
 
 }

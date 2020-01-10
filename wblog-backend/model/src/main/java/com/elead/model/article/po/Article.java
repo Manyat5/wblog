@@ -1,6 +1,5 @@
-package com.elead.model.po;
+package com.elead.model.article.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -14,35 +13,46 @@ import java.util.Date;
 /**
  * @author wwy
  * @date 2020/1/6
- * 用户信息
+ * 文章
  */
 @Data
 @NoArgsConstructor
 @ToString
-@TableName("wb_user")
-public class User {
-    @TableId(type=IdType.UUID)
+@TableName("wb_article")
+
+public class Article {
+    @TableId
     private Long id;
     /**
-     * 登录用户名
+     * 题目
      */
-    private String username;
+    private String title;
     /**
-     * 显示的用户名
+     * 摘要
      */
-    private String nickname;
+    private String summary;
     /**
-     * 密码
+     * 编辑时间
      */
-    private String password;
-    /**
-     * 邮箱
-     */
-    private String email;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date editTime;
     /**
      * 创建时间
      */
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
+    /**
+     * 作者id
+     */
+    private Long uid;
+    /**
+     * markdown内容
+     */
+    private String mdContent;
+    /**
+     * html内容
+     */
+    private String htmlContent;
 }
